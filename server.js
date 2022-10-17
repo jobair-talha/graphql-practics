@@ -6,6 +6,10 @@ const port = process.env.PORT || 8000;
 
 const { ApolloServer } = require("apollo-server-express");
 const { typeDefs, resolvers } = require("./scheme");
+const connectDB = require("./config/db");
+
+// connect Database
+connectDB();
 
 // start apollo server
 const startApolloServer = async () => {
